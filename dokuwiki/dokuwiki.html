@@ -26,71 +26,83 @@
 			
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1、确保一下相依套件已经安装</h3>
 <p>
-
-  （如未安装 用 yum install 安裝即可）
-  gcc-c++
-  make
-  expat-devel
-  perl
-  curl-devel
-  libxml2-devel
-  libjpeg-devel
-  libpng-devel
-  freetype-deve
+	<table border='0'>
+		<tr><td>如未安装 用 yum install 安裝即可）</td></tr>
+		<tr><td>gcc-c++</td></tr>
+		<tr><td>make</td></tr>
+		<tr><td>expat-devel</td></tr>
+		<tr><td>perl</td></tr>
+		<tr><td>curl-devel</td></tr>
+		<tr><td>libxml2-devel</td></tr>
+		<tr><td>libjpeg-devel</td></tr>
+		<tr><td>libpng-devel</td></tr>
+		<tr><td>freetype-deve</td></tr>
+	</table>
 </p>  
 
 <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2、安装php</h3>
 <p>
-  #yum list php  //查找可安装php程序包
-  #yum install ***.（如php.x86_64） //安装相应php程序包
+	<table border='0'>
+		<tr><td>yum list php  //查找可安装php程序包</td></tr>
+		<tr><td>yum install ***.（如php.x86_64） //安装相应php程序包</td></tr>
+	</table>	
 </p>   
 
 <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3、安装httpd</h3>
 <p>
-
-  #yum list httpd //查找可安装httpd程序包
-  #yum install ***.（如httpd.x86_64）//安装相应httpd程序包
+	<table border='0'>
+		<tr><td>yum list httpd //查找可安装httpd程序包</td></tr>
+		<tr><td>yum install ***.（如httpd.x86_64）//安装相应httpd程序包</td></tr>
+	</table>	
 </p>  
 
 <h3> 
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4、安装dokuwiki （建议通过下载包解压到apache发布目录下）</h3>
-<p>  
-  #wget -c http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz //下载网站安装压缩包
-  #tar -zvxf dokuwiki-stable.tgz                                         //解包解压缩
-  #cp -r dokuwiki-2013-05-10a/*  /var/www/html/wiki                      //复制解压的网站源码文件到网站根目录
+<p> 
+	<table border='0'>
+		<tr><td>wget -c http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz //下载网站安装压缩包</td></tr>
+		<tr><td>tar -zvxf dokuwiki-stable.tgz                                         //解包解压缩</td></tr>
+		<tr><td>cp -r dokuwiki-2013-05-10a/*  /var/www/html/wiki                      //复制解压的网站源码文件到网站根目录</td></tr>
+	</table>		 
 </p>   
 
 <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5、更改 httpd.conf # vi /etc/httpd/conf/httpd.conf</h3>
 <p> 
+	<table border='0'>
+		<tr><td>将 DocumentRoot 目录更改到第4步中的dokuwiki路径下 默认为/var/www/html下面配置作用是对URL进行过滤以保证数据安全</td></tr>
+		<tr>
+			<td> 
+				<LocationMatch "/wiki/(data|conf|bin|inc)/">
+					Order allow,deny
+					Deny from all
+					Satisfy all
+				</LocationMatch>
+			</td>
+		</tr>
 
-  将 DocumentRoot 目录更改到第4步中的dokuwiki路径下 默认为/var/www/html
-  下面配置作用是对URL进行过滤以保证数据安全
-  <LocationMatch "/wiki/(data|conf|bin|inc)/">
-      Order allow,deny
-      Deny from all
-      Satisfy all
-  </LocationMatch>
+	</table>	
 </p>   
 
 <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6、调整Apache mime设定</h3>
-<p>  
-  让Apache 可以支援 PHP （/etc/mime.types），在配置中加入
-  application/x-httpd-php php php4 phtml
-  application/x-httpd-php-source phps
+<p>
+	<table border='0'>
+		<tr><td>让Apache 可以支援 PHP （/etc/mime.types），在配置中加入</td></tr>
+		<tr><td>application/x-httpd-php php php4 phtml</td></tr>
+		<tr><td>application/x-httpd-php-source phps</td></tr>
+	</table>  
 </p>  
 
 <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7、 重启 Apache service httpd restart，连接到 Wiki 下的目录执行 install.php 进行安装设定</h3>
 <p>  
-
- （http://IP或者域名/wiki/install.php?l=zh）
-编辑
-问题
-  如果一直install.php页面，提示权限问题，可以试试输入命令setenforce 0
+	<table border='0'>
+		<tr><td>（http://IP或者域名/wiki/install.php?l=zh）</td></tr>
+		<tr><td>如果一直install.php页面，提示权限问题，可以试试输入命令setenforce 0</td></tr>
+	</table>  
 </p> 
 
 
