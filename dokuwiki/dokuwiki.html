@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jdx100424.GitHub.io by jdx100424</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>主要步骤</h1>
+        <p> 注：目前是给本人自己用，所以相关安全性问题可以暂时忽略</p>
+      </header>
+      <section>
+        <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1、确保一下相依套件已经安装</h3>
+<p>
+
+  （如未安装 用 yum install 安裝即可）
+  gcc-c++
+  make
+  expat-devel
+  perl
+  curl-devel
+  libxml2-devel
+  libjpeg-devel
+  libpng-devel
+  freetype-deve
+</p>  
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2、安装php</h3>
+<p>
+  #yum list php  //查找可安装php程序包
+  #yum install ***.（如php.x86_64） //安装相应php程序包
+</p>   
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3、安装httpd</h3>
+<p>
+
+  #yum list httpd //查找可安装httpd程序包
+  #yum install ***.（如httpd.x86_64）//安装相应httpd程序包
+</p>  
+
+<h3> 
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4、安装dokuwiki （建议通过下载包解压到apache发布目录下）</h3>
+<p>  
+  #wget -c http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz //下载网站安装压缩包
+  #tar -zvxf dokuwiki-stable.tgz                                         //解包解压缩
+  #cp -r dokuwiki-2013-05-10a/*  /var/www/html/wiki                      //复制解压的网站源码文件到网站根目录
+</p>   
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5、更改 httpd.conf # vi /etc/httpd/conf/httpd.conf</h3>
+<p> 
+
+  将 DocumentRoot 目录更改到第4步中的dokuwiki路径下 默认为/var/www/html
+  下面配置作用是对URL进行过滤以保证数据安全
+  <LocationMatch "/wiki/(data|conf|bin|inc)/">
+      Order allow,deny
+      Deny from all
+      Satisfy all
+  </LocationMatch>
+</p>   
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6、调整Apache mime设定</h3>
+<p>  
+  让Apache 可以支援 PHP （/etc/mime.types），在配置中加入
+  application/x-httpd-php php php4 phtml
+  application/x-httpd-php-source phps
+</p>  
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7、 重启 Apache service httpd restart，连接到 Wiki 下的目录执行 install.php 进行安装设定</h3>
+<p>  
+
+ （http://IP或者域名/wiki/install.php?l=zh）
+编辑
+问题
+  如果一直install.php页面，提示权限问题，可以试试输入命令setenforce 0
+</p> 
+</a>
+
+</section>
+
+
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
