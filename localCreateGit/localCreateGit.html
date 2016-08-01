@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jdx100424.GitHub.io by jdx100424</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>主要步骤</h1>
+        <p> 注：目前是给本人自己用，所以相关安全性问题可以暂时忽略</p>
+        <p class="view"><a href="https://github.com/jdx100424">View My GitHub Profile</a></p>
+
+      </header>
+      <section>
+		  
+<h3>				
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>终端下进入项目的路径</h3>
+<p>
+	<table border='0'>
+		<tr><td>cd ***** </td></tr>
+	</table>	
+</p>  
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>创建成GIT项目</h3>
+<p>
+	<table border='0'>
+		<tr><td>git init</td></tr>
+	</table>		
+</p>   
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>创建屏蔽文件.gitignore</h3>
+<p>
+	<table border='0'>
+		<tr><td>touch .gitignore</td></tr>
+		<tr>
+			<td>
+			<textarea rows="135" cols="50">
+## .gitignore for Grails 1.2 and 1.3
+
+# .gitignore for maven 
+target/
+*.releaseBackup
+
+# web application files
+#/web-app/WEB-INF
+ 
+# IDE support files
+/.classpath
+/.launch
+/.project
+/.settings
+/*.launch
+/*.tmproj
+/ivy*
+/eclipse
+ 
+# default HSQL database files for production mode
+/prodDb.*
+ 
+# general HSQL database files
+*Db.properties
+*Db.script
+ 
+# logs
+/stacktrace.log
+/test/reports
+/logs
+*.log
+*.log.*
+ 
+# project release file
+/*.war
+ 
+# plugin release file
+/*.zip
+/*.zip.sha1
+ 
+# older plugin install locations
+/plugins
+/web-app/plugins
+/web-app/WEB-INF/classes
+ 
+# "temporary" build files
+target/
+out/
+build/
+ 
+# other
+*.iws
+ 
+#.gitignore for java
+*.class
+ 
+# Package Files #
+*.jar
+*.war
+*.ear
+ 
+## .gitignore for eclipse
+ 
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+ 
+# External tool builders
+.externalToolBuilders/
+ 
+# Locally stored "Eclipse launch configurations"
+*.launch
+ 
+# CDT-specific
+.cproject
+ 
+# PDT-specific
+.buildpath
+ 
+## .gitignore for intellij
+ 
+*.iml
+*.ipr
+*.iws
+.idea/
+ 
+## .gitignore for linux
+.*
+!.gitignore
+!.gitattributes
+!.editorconfig
+!.eslintrc
+!.travis.yml
+*~
+ 
+## .gitignore for windows
+ 
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+ 
+# Folder config file
+Desktop.ini
+ 
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+ 
+## .gitignore for mac os x
+ 
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+ 
+ 
+# Thumbnails
+._*
+ 
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+## hack for graddle wrapper
+!wrapper/*.jar
+!**/wrapper/*.jar
+			</textarea>
+		
+			</td>
+		</tr>
+	</table>	
+</p>  
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>提交文件</h3>
+<p>
+	<table border='0'>
+		<tr><td>commit -m 注释</td></tr>
+
+	</table>	
+</p> 
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GIT官网预先创建GIT项目</h3>
+<p>
+	<table border='0'>
+		<tr><td>https://github.com/****/****.git</td></tr>
+	</table>	
+</p> 
+
+<h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>本地输入提交命令</h3>
+<p>
+	<table border='0'>
+		<tr><td>git remote add origin https://github.com/****/****.git</td></tr>
+		<tr><td>git push -u origin master 并按提示输入用户名和密码</td></tr>
+	</table>	
+</p> 
+
+
+</section>
+	<footer>
+        <p><small><a href="http://blog.csdn.net/kazeik/article/details/9113891/">GIT命令参考文档</a></small></p>
+        <p><small><a href="https://github.com/mengqiang81/git-ignore/blob/master/.gitignore">gitignore文件参考文档</a></small></p>
+    </footer>
+
+    </div>
+    <script src="../javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
